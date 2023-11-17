@@ -77,11 +77,7 @@ console.cgi.
 and we will only test for the HTTP GET method.
 2. You don’t need to fork() and exec() since it’s relatively hard to do it on Windows. Simply parse the
 request and do the specific job within the same process. We guarantee that in this part the URI of
-HTTP requests will be ”/panel.cgi” or ”/console.cgi” plus a query string:
-(a) If it is /panel.cgi,
-Display the panel form just like panel.cgi in part 1. This time, you can hard code the input
-file menu (t1.txt ∼ t10.txt).
-(b) If it is /console.cgi?h0=...,
-Connect to remote servers specified by the query string. Note that the behaviors MUST be
-the same as part 1 in the user’s point of view (though the procedure is different in this
+HTTP requests will be ”/panel.cgi” or ”/console.cgi” plus a query string:  
+(a) If it is /panel.cgi, Display the panel form just like panel.cgi in part 1. This time, you can hard code the input file menu (t1.txt ∼ t10.txt).  
+(b) If it is /console.cgi?h0=..., Connect to remote servers specified by the query string. Note that the behaviors MUST be the same as part 1 in the user’s point of view (though the procedure is different in this
 part).

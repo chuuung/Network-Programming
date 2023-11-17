@@ -11,12 +11,13 @@ Each child process will do:
 3. Check the firewall (socks.conf), and send SOCKS4 REPLY to the SOCKS client if rejected  
 4. Check CD value and choose one of the operations  
 (a) CONNECT (CD=1)  
-i. Connect to the destination
-ii. Send SOCKS4 REPLY to the SOCKS client
-iii. Start relaying traffic on both directions  
+1. Connect to the destination
+2. Send SOCKS4 REPLY to the SOCKS client
+3. Start relaying traffic on both directions  
 (b) BIND (CD=2)
-i. Bind and listen a port
-ii. Send SOCKS4 REPLY to SOCKS client to tell which port to connect
-iii. (SOCKS client tells destination to connect to SOCKS server)
-iv. Accept connection from destination and send another SOCKS4 REPLY to SOCKS client v. Start relaying traffic on both directions
-If the SOCKS server decides to reject a request from a SOCKS client, the connection will be closed immediately.
+1. Bind and listen a port
+2. Send SOCKS4 REPLY to SOCKS client to tell which port to connect
+3. (SOCKS client tells destination to connect to SOCKS server)
+4. Accept connection from destination and send another SOCKS4 REPLY to SOCKS client 
+5. Start relaying traffic on both directions
+If the SOCKS server decides to reject a request from a SOCKS client, the connection will be closed immediately.  

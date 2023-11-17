@@ -10,11 +10,11 @@ Each child process will do:
 2. Get the destination IP and port from SOCKS4 REQUEST  
 3. Check the firewall (socks.conf), and send SOCKS4 REPLY to the SOCKS client if rejected  
 4. Check CD value and choose one of the operations  
-(a) CONNECT (CD=1)  
+A. CONNECT (CD=1)  
 1. Connect to the destination
 2. Send SOCKS4 REPLY to the SOCKS client
 3. Start relaying traffic on both directions  
-(b) BIND (CD=2)
+B. BIND (CD=2)
 1. Bind and listen a port
 2. Send SOCKS4 REPLY to SOCKS client to tell which port to connect
 3. (SOCKS client tells destination to connect to SOCKS server)

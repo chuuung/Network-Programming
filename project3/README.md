@@ -1,5 +1,6 @@
 # Remote Batch System
 
+# Part One
 ## Introduction
 Here, you are asked to write a Remote Batch System, which consists of a simple HTTP server called http server and a CGI program console.cgi. We will use Boost.Asio library to accomplish this project.
 
@@ -61,3 +62,26 @@ h4=                           # no 5th server, so this field is empty
 p4=                           # no 5th server, so this field is empty
 f4=                           # no 5th server, so this field is empty
 ```
+
+# Part two
+## Introduction
+For this part, you are asked to provides the same functionality as part 1, but with some rules slightly
+differs:
+1. Implement one program, cgi server.exe, which is a combination of http server, panel.cgi, and
+console.cgi.
+2. Your program should run on Windows 10.
+
+## Specification
+### 2.1 cgi server.exe
+1. The cgi server.exe accepts TCP connections and parse the HTTP requests (as http server does),
+and we will only test for the HTTP GET method.
+2. You don’t need to fork() and exec() since it’s relatively hard to do it on Windows. Simply parse the
+request and do the specific job within the same process. We guarantee that in this part the URI of
+HTTP requests will be ”/panel.cgi” or ”/console.cgi” plus a query string:
+(a) If it is /panel.cgi,
+Display the panel form just like panel.cgi in part 1. This time, you can hard code the input
+file menu (t1.txt ∼ t10.txt).
+(b) If it is /console.cgi?h0=...,
+Connect to remote servers specified by the query string. Note that the behaviors MUST be
+the same as part 1 in the user’s point of view (though the procedure is different in this
+part).
